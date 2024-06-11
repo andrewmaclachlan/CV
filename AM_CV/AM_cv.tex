@@ -1,0 +1,425 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 8 February 2019
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,]{moderncv}
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{HTML}{3873B3}% custom
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\usepackage[scaled=0.86]{DejaVuSansMono}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\def\donothing#1{#1}
+\def\emaillink#1{#1}
+
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75,footskip=60pt]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+
+
+% personal data
+\name{Andrew}{MacLachlan}
+\title{Associate Professor, CASA, UCL}
+
+
+ % Phone number
+\email{\donothing{\href{mailto:a.maclachlan@ucl.ac.uk}{\nolinkurl{a.maclachlan@ucl.ac.uk}}}}
+\homepage{andymac.uk} % Personal website
+\social[linkedin]{amaclachlan}
+\social[twitter]{andymaclachlan}
+\social[github]{andrewmaclachlan}
+
+
+
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+
+
+
+
+% Pandoc CSL macros
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+
+
+\section{Professional summary}\label{professional-summary}
+
+I am driven to empower our students to become leading activists. I am an
+Associate Professor in the Bartlett Centre for Advanced Spatial
+Analysis, UCL and lead the MSc Urban Spatial Science, one of the largest
+MSc programmes in the Bartlett. Notable activities in education
+leadership, student excellence and inclusion are:
+
+\begin{itemize}
+\tightlist
+\item
+  Spearheading major structural and pedagogical changes by combining two
+  existing MScs into thematic pathways.
+\item
+  Securing Royal Geographical Society accreditation so graduates have a
+  solid academic foundation in geographical skills and are prepared to
+  address the needs of the world beyond higher education.
+\item
+  Attaining a £500,000 grant from the Office for Students to award
+  scholarships to underrepresented groups in data science and AI.
+\item
+  Submitting three successful bids to the Commonwealth Share Scholarship
+  scheme.
+\item
+  Enacting open science through publishing taught content with novel
+  website books, having 53,000 global users and an
+  \href{https://jose.theoj.org/papers/10.21105/jose.00141}{academic
+  paper in the Journal of Open Source Education}.
+\item
+  Devising a new Degree Apprenticeship route to diversify income while
+  enhancing classroom equity and inclusion.
+\end{itemize}
+
+\section{Education}\label{education}
+
+\nopagebreak
+    \cventry{2014-2018}{PhD in Geography and Environmental Science}{University of Southampton / University of Western Australia}{UK /
+Australia}{}{\begin{itemize}%
+\item My PhD was funded for four years by the ESRC. The work provided a holistic and data informed policy-applicable approach in accurately monitoring urban area through time alongside local and metropolitan temperature reduction methodologies making progress in aligning urban heat island mitigation efforts with global targets and improving city sustainability%
+\end{itemize}}
+    \cventry{2013-2014}{MSc Applied GIS and Remote Sensing}{University of Southampton}{UK}{}{\begin{itemize}%
+\item Distinction%
+\end{itemize}}
+    \cventry{2010-2013}{BA Human Geography}{University of Sheffield / University of Wollongong}{UK / Australia}{}{\begin{itemize}%
+\item First class honours%
+\item Overall highest performance in human and physical geography%
+\end{itemize}}
+\newpage
+
+\section{Fellowships}\label{fellowships}
+
+\nopagebreak
+    \cventry{2022}{Fellow}{Academy of Higher Education}{University College London}{}{\empty}
+    \cventry{2016}{Associate fellow}{Academy of Higher Education}{University of Southampton}{}{\empty}
+
+\section{Academic experience}\label{academic-experience}
+
+\nopagebreak
+    \cventry{2019-present}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{London}{}{}{\begin{itemize}%
+\item Associate professor%
+\item Lecturer%
+\item Teaching fellow%
+\end{itemize}}
+
+\nopagebreak
+    \cventry{2023-present}{Sheffield Hallam and The British Army}{Sheffield and Denison Barracks}{}{}{\begin{itemize}%
+\item I externally examine The British Army 42nd Engineer Regiment’s (Geographic) undergraduate degree, awarded through Sheffield Hallam University%
+\end{itemize}}
+    \cventry{2022-present}{University of Oxford}{Oxford}{}{}{\begin{itemize}%
+\item I guest lecture on the MSc in Modelling for Global Health at the University of Oxford and in 2024 I was invited to lead the week long module%
+\end{itemize}}
+    \cventry{2016-2017}{University of Western Australia}{Perth, Western Australia}{}{}{\begin{itemize}%
+\item Postgraduate teaching assistant%
+\end{itemize}}
+    \cventry{2014-2018}{University of Southampton}{Southampton}{}{}{\begin{itemize}%
+\item Postgraduate teaching assistant%
+\item Research assistant%
+\end{itemize}}
+    \cventry{2011}{University of Wollongong}{Wollongong, Australia}{}{}{\begin{itemize}%
+\item Research assistant%
+\end{itemize}}
+
+\section{Teaching at UCL}\label{teaching-at-ucl}
+
+\nopagebreak
+    \cventry{2020-present}{CASA0005: Geographic Information Systems and Science (around 150 postgraduate students)}{module leader}{}{}{\begin{itemize}%
+\item The module presents an overview of the core organising concepts, data formats and methodologies to solve spatial queries and inform decisions%
+\end{itemize}}
+    \cventry{2020-present}{CASA0023: Remotely Sensing Cities and Environments (around 50 postgraduate students)}{module leader}{}{}{\begin{itemize}%
+\item I created a new level 7 module enabling students to operationalise remotely sensed Earth observation data for informing decisions on environmental hazards arising from a changing climate, specifically in relation to (a) urban areas and (b) future urban sustainability%
+\end{itemize}}
+    \cventry{2019-2022}{BASc0005: Quantitative Methods 2: Data Science and Visualisation}{lecturer}{}{}{\begin{itemize}%
+\item This module further develops quantitative skills that are covered in year one%
+\end{itemize}}
+    \cventry{2019-2021}{CASA0004/10/12: Dissertation module (around 150 postgraduate students)}{module leader}{}{}{\empty}
+
+I have also taught on eleven Geographic Information Systems and Remote
+Sensing modules at the University of Southampton and the University of
+Western Australia.
+
+\section{Research}\label{research}
+
+My research focuses on the application of spatial data, specifically
+that from earth observation (e.g.~satellites) to inform and integrate
+sustainability into urban decision making. All my work revolves around
+an applied output that can be actioned upon by stakeholders, such as
+local governments, to improve the socio-physical urban environment. My
+previous work demonstrated the benefits of remotely sensing data in
+consistently monitoring urban land (or expansion) to mitigate the urban
+heat island effect -- a critical 21st century challenge that is often
+not included within global climate models or local planning guidance. My
+current work provides a spatially targeted approach to water point
+rehabilitation in Tanzania in collaboration with the World Bank and the
+Government of Tanzania.
+
+\section{Recent citizenship}\label{recent-citizenship}
+
+\nopagebreak
+    \cventry{2020-present}{Programme leader, MSc/MRes Urban Spatial Science}{}{}{}{\begin{itemize}%
+\item I overhauled the programme aims, learning outcomes and summary to reflect the intent of the taught content alongside the skills students attain under the themes of (1) knowledge and understanding (2) skills, techniques, methods and practical applications of concepts and theories and (3) transferable skills%
+\item I achieved Royal Geographical Society programme accreditation%
+\item I actively promote the programme and department in a series of open days and created a promotional video%
+\end{itemize}}
+    \cventry{2020-present}{Admissions lead, MSc/MRes Urban Spatial Science}{}{}{}{\begin{itemize}%
+\item In 2023 I analysed Tableau data from the last 4 years to (1) proportionally allocate offers based on expected monthly applications and (2) keep home applications open until July%
+\end{itemize}}
+    \cventry{2020-present}{Careers officer}{}{}{}{\begin{itemize}%
+\item I facilitate termly seminars from the UCL careers service staff and organise the annual CASA alumni panel and careers event%
+\end{itemize}}
+    \cventry{2020-present}{Plagiarism panel member}{}{}{}{\begin{itemize}%
+\item I review departmental plagiarism cases and contributed to departmental plagiarism panels%
+\end{itemize}}
+    \cventry{2022-present}{Academic board member}{}{}{}{\begin{itemize}%
+\item I participate in discussion of academic matters across the University%
+\end{itemize}}
+    \cventry{2022-present}{Departmental complaints}{}{}{}{\begin{itemize}%
+\item I have handled several complaints raised about final degree awards in consultation with the case work team%
+\end{itemize}}
+    \cventry{2024-present}{Built Environment exam board chair}{}{}{}{\begin{itemize}%
+\item I run the exam board and discuss external examiner comments with programme leaders%
+\end{itemize}}
+    \cventry{2022-2023}{Royal Geographical Society trail blazer group for the Location Information Specialist (GIS) level 7 apprenticeship scheme}{}{}{}{\begin{itemize}%
+\item I sat on the Royal Geographical Society (RGS) trail blazer group that is responsible for developing the apprenticeship bid%
+\end{itemize}}
+    \cventry{2022}{Interview panel member}{}{}{}{\begin{itemize}%
+\item I participated on an interview panel as an external advisor for Institute of Disaster Risk Reduction%
+\end{itemize}}
+    \cventry{2021}{UCL Africa and Middle East grant panel member}{}{}{}{\begin{itemize}%
+\item I reviewed applications and allocated funding for the 2021 round%
+\end{itemize}}
+    \cventry{2020-2021}{E-Learning Champion / Connected Learning Lead}{}{}{}{\begin{itemize}%
+\item I attended and contributed to the e-learning meetings, providing updates on the department’s use of e-learning tools%
+\end{itemize}}
+
+\section{Grants}\label{grants}
+
+\subsection{Active}\label{active}
+
+\nopagebreak
+    \cventry{2023-2025}{Office for Students}{PI}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item I led a team that in a successful £500,000 grant bid from the Office for Students (OfS) to award scholarships to underrepresented groups in data science and AI%
+\end{itemize}}
+    \cventry{2022-present}{Commonwealth Share Scholarship}{PI}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item I have submitted three successful bids for our MSc Urban Spatial Science programme to the Commonwealth Share Scholarship scheme covering all expenses for students from Low-Middle income Commonwealth countries%
+\end{itemize}}
+    \cventry{2020}{UCL Africa and Middle East Teaching Fund Initiative}{PI}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item Planned collaboration with Geoinformations division in the School of Architecture, Planning and Geomatics at the University of Cape Town (UCT) and the City of Cape Town, Foreign and Commonwealth Office future cities programme%
+\end{itemize}}
+    \cventry{2020}{UCL Changemakers}{PI}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item Developing an interactive weekly formative assessment tool for the CASA Smart Cities and Urban Analytics programme%
+\end{itemize}}
+
+\subsection{Past}\label{past}
+
+\nopagebreak
+    \cventry{2022-2023}{UCL Global Engagement Fund}{Co-I}{UCL Geography}{}{\begin{itemize}%
+\item Developed a workshop on critical interrogations of the digital urban at IIT Hyderabad with Dr Pushpa Arabindoo from UCL geography%
+\end{itemize}}
+    \cventry{2022}{Turning Data Science and AI Educators' Programme}{PI}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\empty}
+    \cventry{2016}{World University Network funding}{PI}{University of Southampton}{}{\empty}
+    \cventry{2015}{Study abroad grant}{PI}{University of Southampton}{}{\empty}
+    \cventry{2014-2018}{Economic and Social Research Council (ESRC) studentship (PhD)}{PI}{University of Southampton}{}{\empty}
+
+\newpage
+
+\section{Publications}\label{publications}
+
+\phantomsection\label{refs-264ef67182648509a858ce40f870dae7}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-brown2024}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Brown, L. A., Morris, H., MacLachlan, A., D'Adamo, F.,
+Adams, J., Lopez-Baeza, E., Albero, E., Martínez, B., Sánchez-Ruiz, S.,
+Campos-Taberner, M., Lidón, A., Lull, C., Bautista, I., Clewley, D.,
+Llewellyn, G., Xie, Q., Camacho, F., Pastor-Guzman, J., Morrone, R.,
+\ldots{} Dash, J. (2024). Hyperspectral Leaf Area Index and Chlorophyll
+Retrieval over Forest and Row-Structured Vineyard Canopies. \emph{Remote
+Sensing}, \emph{16}(12, 12), 2066.
+\url{https://doi.org/10.3390/rs16122066}}
+
+\bibitem[\citeproctext]{ref-ballantyne2023}
+\CSLLeftMargin{2. }%
+\CSLRightInline{Ballantyne, P., Sanderson, R. K., Davies, A., Houlden,
+V., MacLachlan, A., Owen, G., Robinson, C., Shin, H., Wartmann, F. M.,
+Wilkin, J., \& Williams, I. (2023). {``There is no formula for life and
+career''}: A commentary on perspectives and experiences of early career
+quantitative human geographers. \emph{The Geographical Journal},
+\emph{189}(1), 174--181. \url{https://doi.org/10.1111/geoj.12499}}
+
+\bibitem[\citeproctext]{ref-nel2023}
+\CSLLeftMargin{3. }%
+\CSLRightInline{Nel, E., MacLachlan, A., Ballinger, O., Cole, H., \&
+Cole, M. (2023). Data-Driven Decision Making in Response to the COVID-19
+Pandemic: A City of Cape Town Case Study. \emph{Sustainability},
+\emph{15}(3, 3), 1853. \url{https://doi.org/10.3390/su15031853}}
+
+\bibitem[\citeproctext]{ref-maclachlan2022}
+\CSLLeftMargin{4. }%
+\CSLRightInline{MacLachlan, A., \& Dennett, A. (2022). An Applied
+Geographic Information Systems and Science Course in R. \emph{Journal of
+Open Source Education}, \emph{5}(50, 50).
+\url{http://dx.doi.org/10.21105/jose.00141}}
+
+\bibitem[\citeproctext]{ref-maclachlan2021}
+\CSLLeftMargin{5. }%
+\CSLRightInline{MacLachlan, A., Biggs, E., Roberts, G., \& Boruff, B.
+(2021). Sustainable City Planning: A Data-Driven Approach for Mitigating
+Urban Heat. \emph{Frontiers in Built Environment}, \emph{6}.
+\url{https://www.frontiersin.org/articles/10.3389/fbuil.2020.519599}}
+
+\bibitem[\citeproctext]{ref-maclachlan2017b}
+\CSLLeftMargin{6. }%
+\CSLRightInline{MacLachlan, A., Biggs, E., Roberts, G., \& Boruff, B.
+(2017). Urbanisation-Induced Land Cover Temperature Dynamics for
+Sustainable Future Urban Heat Island Mitigation. \emph{Urban Science},
+\emph{1}(4, 4), 38. \url{https://doi.org/10.3390/urbansci1040038}}
+
+\bibitem[\citeproctext]{ref-maclachlan2017}
+\CSLLeftMargin{7. }%
+\CSLRightInline{MacLachlan, A., Roberts, G., Biggs, E., \& Boruff, B.
+(2017). Subpixel land-cover classification for improved urban area
+estimates using Landsat. \emph{International Journal of Remote Sensing},
+\emph{38}(20), 5763--5792.
+\url{https://doi.org/10.1080/01431161.2017.1346403}}
+
+\bibitem[\citeproctext]{ref-maclachlan2017a}
+\CSLLeftMargin{8. }%
+\CSLRightInline{MacLachlan, A., Biggs, E., Roberts, G., \& Boruff, B.
+(2017). Urban Growth Dynamics in Perth, Western Australia: Using Applied
+Remote Sensing for Sustainable Future Planning. \emph{Land}, \emph{6}(1,
+1), 9. \url{https://doi.org/10.3390/land6010009}}
+
+\bibitem[\citeproctext]{ref-maclachlan2017c}
+\CSLLeftMargin{9. }%
+\CSLRightInline{MacLachlan, A., Biggs, E., Roberts, G., \& Boruff, B.
+(2017). \emph{Classified earth observation data between 1990 and 2015
+for the Perth Metropolitan Region, Western Australia using the Import
+Vector Machine algorithm.}
+\url{https://research-repository.uwa.edu.au/en/publications/classified-earth-observation-data-between-1990-and-2015-for-the-p}}
+
+\end{CSLReferences}
+
+\section{Five most recent talks}\label{five-most-recent-talks}
+
+\nopagebreak
+    \cventry{2024-04-09}{Closing the gap: a spatially targeted approach to water point. Rural Water Supply and Sanitation Agency (RUWASA), Government of Tanzania, Development Impact Evaluation Unit (DIME), World Bank Group, Water Global Practice, World Bank Group
+rehabilitation in Tanzania"}{GISRUK 2024 conference presentation}{University of Leeds}{}{\begin{itemize}%
+\item Paper: https://zenodo.org/records/10926688%
+\end{itemize}}
+    \cventry{2023-07-19}{Critical interrogations of the digital urban}{UCL Geography and the Indian Institute of Technology Hyderabad}{Hyderabad}{}{\begin{itemize}%
+\item Resources: https://andrewmaclachlan.github.io/digital-urban-hyderabad/%
+\end{itemize}}
+    \cventry{2023-06-21}{Reproducible geographical information Systems and Science}{Teaching reproducible research and open science conference}{Sheffield}{}{\begin{itemize}%
+\item Resources: https://github.com/andrewmaclachlan/perspectives-on-teaching-reproducibility%
+\end{itemize}}
+    \cventry{2022-11-11}{Invited presentation on sustainable city planning for the Centre for Liveable Cities (CLC}{Centre for Liveable Cities (CLC), Singapore \& The Bartlett Centre for Advanced Spatial Analysis (CASA), UCL}{London}{}{\empty}
+    \cventry{2022-03-08}{Invited lecture on point pattern analysis for the new MSc in Modelling in Global Health}{University of Oxford}{Oxford}{}{\begin{itemize}%
+\item Slides: https://andrewmaclachlan.github.io/Spatial-analysis-of-public-health-data/\#1%
+\end{itemize}}
+
+\section{Academic supervision}\label{academic-supervision}
+
+\subsection{PhD}\label{phd}
+
+\nopagebreak
+    \cventry{2022-present}{Emmanuel Farinre}{2nd supervisor}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item Thesis title “The Mental Health of Individuals and Neighbourhoods \& Victims and Perpetrators of Violence. Where do we Intervene”%
+\end{itemize}}
+    \cventry{2019}{Matthew Kok Ming Ng}{3rd supervisor}{The Bartlett Centre for Advanced Spatial Analysis, UCL}{}{\begin{itemize}%
+\item Thesis title “Analysing Urban Growth in Brunei: a focus on land-use, accessibility,
+and policy”%
+\end{itemize}}
+
+\subsection{Award winning MSc
+students}\label{award-winning-msc-students}
+
+\nopagebreak
+    \cventry{2022}{Loubna Sasso}{Society for Location Analysis}{Masters award}{}{\begin{itemize}%
+\item https://github.com/LoubnaSasso/CASA-Dissertation\_LS%
+\end{itemize}}
+    \cventry{2021}{Signe Swarttouw}{Royal Geographical Society}{Planning and Environment}{}{\begin{itemize}%
+\item https://github.com/signesw/CASA0010\_Dissertation%
+\end{itemize}}
+    \cventry{2020}{Cheyne Campbell}{Royal Geographical Society}{Planning and Environment}{}{\begin{itemize}%
+\item https://github.com/cheynecampbell/charlotte-pedestrian-safety%
+\end{itemize}}
+
+\subsection{AFHEA mentorship}\label{afhea-mentorship}
+
+\nopagebreak
+    \cventry{2021}{Laura Sheppard}{Associate Fellow of the Higher Education Academy}{UCL}{}{\empty}
+    \cventry{2020}{Bin Chi}{Associate Fellow of the Higher Education Academy}{UCL}{}{\empty}
+
+
+\end{document}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

@@ -1,0 +1,239 @@
+---
+name: Andrew
+surname: MacLachlan
+position: "Associate Professor, CASA, UCL"
+#address: "The Bartlett Centre for Advanced Spatial Analysis, University College London"
+#phone: +1 22 3333 4444
+#www: mariecurie.com
+www: andymac.uk
+email: "a.maclachlan@ucl.ac.uk"
+twitter: andymaclachlan
+github: andrewmaclachlan
+linkedin: amaclachlan
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::moderncv:
+    theme: classic
+    keep_tex: true
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+#library(scholar)
+library(readr)
+library(tidyverse)
+library(glue)
+library(lubridate)
+```
+
+```{r, message=FALSE}
+# install.packages("readxl") uncomment this if you need to install the package
+library(readxl)
+readExcelSheets <- function(filename){
+  # read all sheets in .xlsx 
+  all <- readxl::excel_sheets(filename)
+  # import each sheet into a list using readxl::read_excel
+  list <- lapply(all, function(x) readxl::read_excel(filename, sheet = x))
+  # save sheet name for each sheet (list)
+  names(list) <- all
+  # breaks up list and creates a dataframe for each sheet with df names matching sheet names
+  invisible(list2env(list, envir = .GlobalEnv))
+}
+```
+
+
+# Professional summary
+
+I am driven to empower our students to become leading activists. I am an Associate Professor in the Bartlett Centre for Advanced Spatial Analysis, UCL and lead the MSc Urban Spatial Science, one of the largest MSc programmes in the Bartlett. Notable activities in education leadership, student excellence and inclusion are:
+
+* Spearheading major structural and pedagogical changes by combining two existing MScs into thematic pathways.
+* Securing Royal Geographical Society accreditation so graduates have a solid academic foundation in geographical skills and are prepared to address the needs of the world beyond higher education.
+* Attaining a £500,000 grant from the Office for Students to award scholarships to underrepresented groups in data science and AI.
+* Submitting three successful bids to the Commonwealth Share Scholarship scheme.
+* Enacting open science through publishing taught content with novel website books, having 53,000 global users and an [academic paper in the Journal of Open Source Education](https://jose.theoj.org/papers/10.21105/jose.00141). 
+* Devising a new Degree Apprenticeship route to diversify income while enhancing classroom equity and inclusion.
+
+# Education
+
+```{r}
+filename <- here::here("AM_data.xlsx")
+readExcelSheets(filename)
+```
+
+```{r}
+education %>% 
+  detailed_entries(what = degree,
+                   when = year,
+                   with = institution,
+                   where = where,
+                   why = details)%>%
+              arrange(desc(when))
+
+```
+\newpage
+
+# Fellowships
+
+```{r}
+appointments %>% 
+  filter(Type=="Fellowship")%>%
+  detailed_entries(what = role,
+                   when = start_date,
+                   with = institution,
+                   where = where,
+                   why = details)%>%
+  arrange(desc(when))
+```
+
+# Academic experience
+
+```{r}
+experience %>% 
+  filter(place=="CASA")%>%
+  detailed_entries(what = institution,
+                   when = dates,
+                   with = where,
+                   #where = where,
+                   why = details)%>%
+    arrange(desc(when))
+
+```
+
+
+```{r}
+experience %>% 
+  filter(place!="CASA")%>%
+  detailed_entries(what = institution,
+                   when = dates,
+                   with = where,
+                   #where = where,
+                   why = details)%>%
+    arrange(desc(when))
+
+```
+
+# Teaching at UCL
+
+```{r}
+taught_modules %>% 
+  filter(where =="UCL")%>%
+  detailed_entries(what = name,
+                   when = dates,
+                   with = role,
+                   #where = where,
+                   why = details)%>%
+    arrange(desc(when))
+```
+I have also taught on eleven Geographic Information Systems and Remote Sensing modules at the University of Southampton and the University of Western Australia. 
+
+# Research
+
+My research focuses on the application of spatial data, specifically that from earth observation (e.g.  satellites) to inform and integrate sustainability into urban decision making. All my work revolves around an applied output that can be actioned upon by stakeholders, such as local governments, to improve the socio-physical urban environment. My previous work demonstrated the benefits of remotely sensing data in consistently monitoring urban land (or expansion) to mitigate the urban heat island effect – a critical 21st century challenge that is often not included within global climate models or local planning guidance. My current work provides a spatially targeted approach to water point rehabilitation in Tanzania in collaboration with the World Bank and the Government of Tanzania. 
+
+# Recent citizenship
+
+```{r}
+UCL_roles %>%
+  detailed_entries(what = what,
+                   when= dates,
+                   #with = where,
+                   #where = where,
+                   why = details)
+
+```
+# Grants
+
+## Active
+
+```{r}
+grants %>% 
+  filter(Status=="current")%>%
+  detailed_entries(what = funder,
+                   when = dates,
+                   with = role,
+                   where = where,
+                   why = details)%>%
+      arrange(desc(when))
+
+```
+
+## Past
+
+
+```{r}
+grants %>% 
+  filter(Status=="previous")%>%
+  detailed_entries(what = funder,
+                   when = dates,
+                   with = role,
+                   where = where,
+                   why = details)%>%
+        arrange(desc(when))
+
+
+```
+
+\newpage
+
+# Publications
+
+```{r}
+
+bibliography_entries("mypubs.bib")%>%
+  arrange(desc(issued))
+```
+
+
+# Five most recent talks
+
+```{r}
+talks %>% 
+  arrange(desc(when))%>%
+    head(n=5)%>%
+  detailed_entries(what = what,
+                   when = when,
+                   with = with,
+                   where = where,
+                   why = details)
+```
+
+
+# Academic supervision 
+
+## PhD
+
+```{r}
+phd_supervision %>% 
+  detailed_entries(what = name,
+                   when = dates,
+                   with = role,
+                   where = where,
+                   why = details)%>%
+            arrange(desc(when))
+
+
+```
+## Award winning MSc students
+
+```{r}
+MSc_supervision %>% 
+  detailed_entries(what = name,
+                   when = dates,
+                   with = institution,
+                   where = award,
+                   why = details)%>%
+              arrange(desc(when))
+
+```
+
+## AFHEA mentorship
+```{r}
+AHEA %>% 
+  detailed_entries(what = name,
+                   when = dates,
+                   with = award,
+                   where = institution)%>%
+              arrange(desc(when))
+
+```
